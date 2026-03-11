@@ -1,0 +1,2 @@
+///
+/// Es conveniente usar un callback para códigos simples, para pocas funciones una después de la otra, ya que utilizar varios hace que el código sea ilegible y peor aún, un callback hell si hay varios callback. Mientras que es más conveniente usar una promesa, para tener un código más limpio, además de encadenar varias operaciones, como también un mejor manejo de errores con el uso de .catch().
