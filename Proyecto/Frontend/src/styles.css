@@ -1,0 +1,280 @@
+:root{
+  --bg:#0b0f14; --panel:#0f1720; --muted:#9aa4b2; --accent:#f59e0b;
+  --card:#11161b; --text:#e6eef6;
+}
+body{
+  margin:0;
+  font-family:Inter,system-ui,Arial;
+  background:var(--bg);
+  color:var(--text);
+  font-size:14px;
+}
+.app{
+  display:flex;
+  height:100vh;
+  flex-direction:row;
+}
+.sidebar{
+  width:220px;
+  padding:20px;
+  background:linear-gradient(180deg,var(--panel),#0b1116);
+  box-shadow:2px 0 10px rgba(0,0,0,.6);
+  overflow-y:auto;
+  flex-shrink:0;
+}
+.sidebar h2{
+  color:var(--accent);
+  margin:0 0 20px;
+  font-size:20px;
+}
+.sidebar nav{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+.sidebar a{
+  color:var(--muted);
+  text-decoration:none;
+  padding:8px;
+  border-radius:6px;
+  transition:all 0.2s;
+  font-size:14px;
+}
+.sidebar a:hover{
+  background:rgba(255,255,255,0.03);
+  color:var(--text);
+}
+.user{
+  margin-top:20px;
+  color:var(--muted);
+  font-size:12px;
+  word-break:break-word;
+}
+.main{
+  flex:1;
+  padding:24px;
+  overflow:auto;
+}
+.card{
+  background:var(--card);
+  padding:16px;
+  border-radius:10px;
+  box-shadow:0 6px 18px rgba(2,6,23,.6);
+  transition:all 0.3s;
+  border:1px solid rgba(255,255,255,0.05);
+}
+.card:hover{
+  box-shadow:0 8px 24px rgba(2,6,23,.8);
+  border:1px solid rgba(255,255,255,0.1);
+}
+.form-row{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.input{
+  background:#081018;
+  border:1px solid #17202a;
+  padding:8px;
+  border-radius:6px;
+  color:var(--text);
+  transition:all 0.2s;
+  width:100%;
+  box-sizing:border-box;
+  font-size:14px;
+}
+.input:focus{
+  outline:none;
+  border-color:var(--accent);
+  background:#0c1520;
+  box-shadow:0 0 10px rgba(245,158,11,0.2);
+}
+.btn{
+  background:var(--accent);
+  border:none;
+  padding:8px 12px;
+  border-radius:6px;
+  color:#081018;
+  cursor:pointer;
+  font-weight:500;
+  transition:all 0.2s;
+  font-size:14px;
+  white-space:nowrap;
+}
+.btn:hover{
+  background:#ffa500;
+  transform:translateY(-2px);
+  box-shadow:0 4px 12px rgba(245,158,11,0.4);
+}
+.btn:active{
+  transform:translateY(0);
+}
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:12px;
+  font-size:13px;
+}
+.table th,.table td{
+  padding:12px;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+  text-align:left;
+}
+.table th{
+  background:rgba(245,158,11,0.08);
+  font-weight:600;
+  color:var(--accent);
+}
+.table tr:hover{
+  background:rgba(255,255,255,0.02);
+}
+h3{
+  color:var(--accent);
+  margin-top:0;
+  font-size:24px;
+}
+h4{
+  margin:0 0 12px;
+  color:var(--text);
+  font-size:18px;
+}
+h5{
+  margin:8px 0 6px;
+  color:var(--muted);
+  font-size:13px;
+}
+label{
+  font-size:13px;
+}
+
+/* Responsive Design */
+@media (max-width:1200px) {
+  .sidebar {
+    width:180px;
+    padding:16px;
+  }
+  .sidebar h2 {
+    font-size:18px;
+    margin-bottom:16px;
+  }
+  .main {
+    padding:16px;
+  }
+  h3 {
+    font-size:20px;
+  }
+}
+
+@media (max-width:768px) {
+  .app {
+    flex-direction:column;
+    height:auto;
+    min-height:100vh;
+  }
+  .sidebar {
+    width:100%;
+    padding:12px;
+    flex-shrink:0;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .sidebar h2 {
+    font-size:16px;
+    margin-bottom:10px;
+  }
+  .sidebar nav {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(100px,1fr));
+    gap:8px;
+  }
+  .sidebar a {
+    padding:6px;
+    font-size:12px;
+    text-align:center;
+  }
+  .user {
+    grid-column:1/-1;
+    margin-top:10px;
+  }
+  .main {
+    padding:12px;
+  }
+  .card {
+    padding:12px;
+  }
+  h3 {
+    font-size:18px;
+  }
+  h4 {
+    font-size:16px;
+  }
+  .input {
+    font-size:16px;
+    padding:10px;
+  }
+  .btn {
+    padding:6px 10px;
+    font-size:12px;
+  }
+  .table {
+    font-size:12px;
+  }
+  .table th,.table td {
+    padding:8px;
+  }
+}
+
+@media (max-width:480px) {
+  .sidebar {
+    padding:8px;
+  }
+  .sidebar h2 {
+    font-size:14px;
+    margin-bottom:8px;
+  }
+  .sidebar nav {
+    grid-template-columns:1fr 1fr;
+    gap:6px;
+  }
+  .sidebar a {
+    padding:5px;
+    font-size:11px;
+  }
+  .main {
+    padding:8px;
+  }
+  .card {
+    padding:10px;
+  }
+  h3 {
+    font-size:16px;
+  }
+  h4 {
+    font-size:14px;
+  }
+  h5 {
+    font-size:12px;
+  }
+  .input {
+    font-size:16px;
+    padding:8px;
+  }
+  .btn {
+    padding:5px 8px;
+    font-size:11px;
+  }
+  .table {
+    font-size:11px;
+  }
+  .table th,.table td {
+    padding:6px;
+  }
+  .table td:last-child {
+    display:flex;
+    gap:4px;
+    flex-wrap:wrap;
+  }
+  .table td:last-child .btn {
+    flex:1;
+    min-width:50px;
+  }
+}
